@@ -1,0 +1,28 @@
+name: Tests - E2E Tests
+
+on:
+  pull_request:
+
+jobs:
+  smoke-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          cache: true
+          cache-dependency-path: go.sum
+          go-version-file: go.mod
+          check-latest: true
+      
+      - name: Build
+        run: |
+          go mod tidy
+          env CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o bin/zc cmd/server/main.go
+      
+      - name: Smoke Tests
+        run: |
+          bin/zc&
+          sleep 1
+          go test -v -count=1 -p 1 github.com/jmsilvadev/zc/cmd/client/...

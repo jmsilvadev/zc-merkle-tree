@@ -1,0 +1,20 @@
+version: '3.5'
+services:
+  app:
+    build: ./
+    restart: on-failure
+    container_name: zc
+    ports:
+     - "5000:5000"
+    volumes:
+      - ${PWD}/app:/app
+    environment:
+      SERVER_PORT: ':5000'
+      LOG_LEVEL: 'INFO'
+      DB_ENGINE: leveldb # for production use scylladb
+      SCYLLA_HOSTS: zc-scylla
+  
+  ## Uncomment if you want to use scy7lladb
+  #scylla:
+  #  image: scylladb/scylla
+  #  container_name: zc-scylla
