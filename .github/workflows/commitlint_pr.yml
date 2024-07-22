@@ -1,0 +1,16 @@
+name: Quality - Conventional Commits Check
+
+on:
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - reopened
+      - synchronize
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: ahmadnassri/action-commit-lint@v2

@@ -1,0 +1,29 @@
+name: Quality - Code Quality
+
+on:
+  pull_request:
+
+jobs:
+  cyclo-misspell-ineffassign:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          cache: true
+          cache-dependency-path: go.sum
+          go-version-file: go.mod
+          check-latest: true
+        
+      - name: Install Deps
+        run: |
+          go install github.com/fzipp/gocyclo/cmd/gocyclo@latest
+          go install github.com/client9/misspell/cmd/misspell@latest
+          go install github.com/gordonklaus/ineffassign@latest
+      - name: Cyclo
+        run: gocyclo -over 50 .
+      - name: Misspell
+        run: misspell -error .
+      - name: Detect ineffectual assignments
+        run: ineffassign ./...
