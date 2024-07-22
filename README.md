@@ -1,3 +1,6 @@
+[![Coverage Tests](https://github.com/jmsilvadev/actions/workflows/automated_tests.yml/badge.svg)](https://github.com/jmsilvadev/actions/workflows/automated_tests.yml)
+[![E2E Tests](https://github.com/jmsilvadev/actions/workflows/e2e_tests.yml/badge.svg)](https://github.com/jmsilvadev/actions/workflows/e2e_tests.yml)
+[![Quality](https://github.com/jmsilvadev/actions/workflows/quality.yml/badge.svg)](https://github.com/jmsilvadev/actions/workflows/quality.yml)
 
 # Secure File Storage and Retrieval System
 
@@ -30,7 +33,7 @@ Before you begin, ensure you have the following installed on your system:
 2. Build and start the Docker containers:
 
    ```sh
-   make up
+   make up-build
    ```
 
    This command will:
@@ -77,13 +80,13 @@ Usage of bin/zc-cli:
 To upload files:
 
 ```
-$ bin/zc-cli -operation upload -files ./file2.txt,./file1.txt,./file3.txt,./file4.txt
+bin/zc-cli -operation upload -files ./file2.txt,./file1.txt,./file3.txt,./file4.txt
 ```
 
 To update or add more files without delete the existents:
 
 ```
-$ bin/zc-cli -operation update -files ./file5.txt
+bin/zc-cli -operation update -files ./file5.txt
 ```
 
 To dowanload a i-th file:
