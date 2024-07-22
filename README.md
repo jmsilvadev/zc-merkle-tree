@@ -1,6 +1,6 @@
-[![Coverage Tests](https://github.com/jmsilvadev/actions/workflows/automated_tests.yml/badge.svg)](https://github.com/jmsilvadev/actions/workflows/automated_tests.yml)
-[![E2E Tests](https://github.com/jmsilvadev/actions/workflows/e2e_tests.yml/badge.svg)](https://github.com/jmsilvadev/actions/workflows/e2e_tests.yml)
-[![Quality](https://github.com/jmsilvadev/actions/workflows/quality.yml/badge.svg)](https://github.com/jmsilvadev/actions/workflows/quality.yml)
+[![Coverage Tests](https://github.com/jmsilvadev/zc/actions/workflows/automated_tests.yml/badge.svg)](https://github.com/jmsilvadev/zc/actions/workflows/automated_tests.yml)
+[![E2E Tests](https://github.com/jmsilvadev/zc/actions/workflows/e2e_tests.yml/badge.svg)](https://github.com/jmsilvadev/zc/actions/workflows/e2e_tests.yml)
+[![Quality](https://github.com/jmsilvadev/zc/actions/workflows/quality.yml/badge.svg)](https://github.com/jmsilvadev/zc/actions/workflows/quality.yml)
 
 # Secure File Storage and Retrieval System
 
